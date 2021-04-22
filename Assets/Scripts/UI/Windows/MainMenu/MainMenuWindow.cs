@@ -1,6 +1,7 @@
 ﻿using ProjectWestern.Constants;
 using ProjectWestern.Services;
 using ProjectWestern.UI.Windows.Loading;
+using ProjectWestern.UI.Windows.Test;
 using UnityEngine;
 
 namespace ProjectWestern.UI.Windows.MainMenu
@@ -22,6 +23,11 @@ namespace ProjectWestern.UI.Windows.MainMenu
             //windowsManager.CreateWindow<GameLoadingWindow>(GameLoadingWindow.prefabPath, Enums.EnumWindowsLayer.Loading, ConstantScenes.TEST_SCENE);
 
             //Close();
+
+            var windowsManager = ComponentLocator.Resolve<WindowsManager.WindowsManager>();
+            windowsManager.CreateWindow<TestShootingWindow>(TestShootingWindow.prefabPath, Enums.EnumWindowsLayer.Main);
+
+            Close();
         }        
     }
 }
